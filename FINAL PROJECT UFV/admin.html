@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; 
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #1e88e5; 
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 20px 0 10px;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #f0f4c3; 
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-section {
+            margin-bottom: 40px;
+        }
+        .form-section h2 {
+            font-size: 2em;
+            color: #1e88e5; 
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .form-group {
+     margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 1em;
+            color: #212121; 
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="file"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            background-color: #007bff; 
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .form-group button:hover {
+            background-color: #0056b3; 
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e88e5; 
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Page for Admin</h1>
+        <p>Manage your content in an efficient way</p>
+    </header>
+    <div class="container">
+        <div class="form-section">
+            <h2>Upload News about yourself</h2>
+            <form action="server/admin-action.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="news-title">News Title</label>
+                    <input type="text" id="news-title" name="news-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="news-content">News Content</label>
+                    <textarea id="news-content" name="news-content" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="news-image">Upload Image</label>
+                    <input type="file" id="news-image" name="news-image">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Upload News</button>       </div>
+            </form>
+        </div>
+        <div class="form-section">
+            <h2>Add your New Product</h2>
+            <form action="server/admin-action.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Product Description</label>
+                    <textarea id="product-description" name="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Upload Image</label>
+                    <input type="file" id="product-image" name="product-image">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </div>
+</body>
+</html>
